@@ -13,10 +13,11 @@ export default {
       const cachedTheme = localStorage.theme ? localStorage.theme : false;
       if(cachedTheme)
         commit('SET_THEME', cachedTheme)
-      commit('SET_THEME', 'light')
+      else
+        commit('SET_THEME', 'light')
     },
     TOGGLE_THEME( {commit} ) {
-      switch (localstorage.theme) {
+      switch (localStorage.theme) {
         case 'light':
           commit('SET_THEME', 'dark')
           break;
