@@ -50,6 +50,8 @@
 </template>
 
 <script>
+import { mapActions } from 'vuex'
+
 export default {
   name: 'navbar',
   data: () => ({
@@ -61,14 +63,7 @@ export default {
     theme: false
   }),
   methods: {
-    darkMode() {
-      this.theme = !this.theme 
-      if(this.theme) {
-        document.documentElement.classList.add('dark')
-      } else {
-      document.documentElement.classList.remove('dark')
-      }
-    }
+    ...mapActions({darkMode: "TOGGLE_THEME"}),
   }
 }
 </script>
@@ -76,6 +71,5 @@ export default {
 <style>
 a.exac-active {
   text-decoration: underline;
-  height: 2px;
 }
 </style>
