@@ -9,6 +9,12 @@ export default {
       }
   },
   actions: {
+    INIT_THEME( {commit} ) {
+      const cachedTheme = localStorage.theme ? localStorage.theme : false;
+      if(cachedTheme)
+        commit('SET_THEME', cachedTheme)
+      commit('SET_THEME', 'light')
+    }
   },
   getters: {
   }
