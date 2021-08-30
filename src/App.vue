@@ -15,6 +15,9 @@ export default {
   components: {
     NavBar
   },
+  beforeMount() {
+    this.$store.dispatch("INIT_THEME");
+  },
   computed: {
     layout() {
       const layoutName = this.$route.meta.layout || 'MainLayout';
