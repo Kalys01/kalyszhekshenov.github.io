@@ -14,8 +14,20 @@ export default {
       if(cachedTheme)
         commit('SET_THEME', cachedTheme)
       commit('SET_THEME', 'light')
-    }
+    },
+    TOGGLE_THEME( {commit} ) {
+      switch (localstorage.theme) {
+        case 'light':
+          commit('SET_THEME', 'dark')
+          break;
+      
+        default:
+          commit('SET_THEME', 'light')
+          break;
+      }
+    },
   },
+
   getters: {
   }
 }
