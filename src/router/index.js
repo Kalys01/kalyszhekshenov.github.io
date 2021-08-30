@@ -20,7 +20,7 @@ const routes = [
     path: '/contact',
     name: 'Contact',
     component: () => import('../views/Contact.vue'),
-    meta: {layout: 'AuthLayout'}
+    meta: {layout: 'MainLayout'}
   }
 ]
 

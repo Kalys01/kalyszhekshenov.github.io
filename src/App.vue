@@ -8,7 +8,6 @@
 </template>
 
 <script>
-// import { mapGetters } from "vuex";
 import NavBar from '@/components/NavBar'
 
 export default {
@@ -21,8 +20,8 @@ export default {
       const layoutName = this.$route.meta.layout || 'MainLayout';
       return () => import(`@/layouts/${layoutName}.vue`)
     },
-  }
-}
+  },
+};
 </script>
 
 <style lang="scss">

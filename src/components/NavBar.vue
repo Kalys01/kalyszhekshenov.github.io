@@ -52,7 +52,6 @@
 <script>
 export default {
   name: 'navbar',
-  components: {  },
   data: () => ({
     navLinks: [
       // {name: 'Home', to: '/'},
