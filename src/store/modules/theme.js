@@ -29,5 +29,8 @@ export default {
   },
 
   getters: {
+    GET_THEME(state) {
+      return state.theme;
+    }
   }
 }
