@@ -6,7 +6,12 @@ module.exports = {
   },
   variants: {
     extend: {
+      maxHeight: ['focus'],
       textColor: ['visited'],
+      backgroundColor: ['active'],
+      borderColor: ['focus', 'hover'],
+      padding: ['hover'],
+
     },
   },
   plugins: [],
