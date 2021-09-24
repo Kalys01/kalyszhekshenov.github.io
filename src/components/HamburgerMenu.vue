@@ -1,5 +1,5 @@
 <template>
-  <div class="absolute bottom-6 right-6 sm:hidden z-30" @click="toggle">
+  <div class="absolute bottom-6 right-6 sm:hidden z-30" @click="showS">
     <button type="button" class="text-black dark:text-gray-300" aria-label="toggle menu">
       <svg
         aria-hidden="true"
@@ -21,19 +21,18 @@
 </template>
 
 <script>
+import { bus } from '../main'
+
 export default {
   props: [],
   data: () => ({
-    left: false
+    showNav: true,
   }),
   methods: {
-    toggle() {
-      this.left = !this.left;
-      !this.left
-        ? document.getElementById("btn").classList.remove("-left-52")
-        : document.getElementById("btn").classList.add("-left-52");
+    showS() {
+        bus.$emit('portal', this.showNav = !this.showNav)
     }
-  }
+  },
 };
 </script>
 

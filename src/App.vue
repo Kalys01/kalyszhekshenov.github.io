@@ -5,11 +5,8 @@
       <component :is="layout">
         <router-view />
       </component>
+      <TheSidebar />
       <HamburgerMenu />
-      <div
-         id="btn"
-        class="absolute z-0 border-black top-0 -left-52 shadow w-52 h-full bg-black md:hidden dark:bg-gray-300"
-      ></div>
     </div>
   </div>
 </template>
@@ -17,13 +14,15 @@
 <script>
 import TheNavBar from "@/components/TheNavBar.vue";
 import HamburgerMenu from "@/components/HamburgerMenu.vue";
+import TheSidebar from "@/components/TheSidebar.vue";
 import { mapGetters } from "vuex";
 
 export default {
   name: "App",
   components: {
     TheNavBar,
-    HamburgerMenu
+    HamburgerMenu,
+    TheSidebar,
   },
   beforeMount() {
     this.$store.dispatch("INIT_THEME");
