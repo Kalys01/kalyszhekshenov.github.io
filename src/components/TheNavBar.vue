@@ -66,17 +66,15 @@
 </template>
 
 <script>
-import { mapActions } from "vuex";
+import { mapActions, mapGetters } from "vuex";
 
 export default {
   name: "navbar",
   data: () => ({
-    navLinks: [
-      { name: "Home", to: "/" },
-      { name: "Contact", to: "/contact" },
-      { name: "About", to: "/about" }
-    ]
   }),
+  computed: {
+    ...mapGetters({ navLinks: "links"})
+  },
   methods: {
     ...mapActions({ switchTheme: "TOGGLE_THEME" })
   }
