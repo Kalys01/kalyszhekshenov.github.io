@@ -26,7 +26,7 @@ import { bus } from '../main'
 export default {
   props: [],
   data: () => ({
-    showNav: true,
+    showNav: false,
   }),
   methods: {
     showS() {

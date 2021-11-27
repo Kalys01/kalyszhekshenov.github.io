@@ -5,7 +5,7 @@
       <component :is="layout">
         <router-view />
       </component>
-      <TheSidebar />
+      <TheSidebarMobile />
       <HamburgerMenu />
     </div>
   </div>
@@ -14,7 +14,7 @@
 <script>
 import TheNavBar from "@/components/TheNavBar.vue";
 import HamburgerMenu from "@/components/HamburgerMenu.vue";
-import TheSidebar from "@/components/TheSidebar.vue";
+import TheSidebarMobile from "@/components/TheSidebarMobile.vue";
 import { mapGetters } from "vuex";
 
 export default {
@@ -22,13 +22,14 @@ export default {
   components: {
     TheNavBar,
     HamburgerMenu,
-    TheSidebar,
+    TheSidebarMobile,
   },
   beforeMount() {
     this.$store.dispatch("INIT_THEME");
   },
   computed: {
     layout() {
+      console.log(this.$route.meta);
       const layoutName = this.$route.meta.layout || "MainLayout";
       return () => import(`@/layouts/${layoutName}.vue`);
     },

@@ -18,5 +18,8 @@ module.exports = {
 
     },
   },
+  colors: {
+    orange: '#fff'
+  },
   plugins: [],
 }

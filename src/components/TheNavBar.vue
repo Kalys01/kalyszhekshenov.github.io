@@ -1,12 +1,16 @@
 <template>
-  <nav
-    class="bg-black font-medium z-20 text-gray-300 absolute t-0 w-full dark:bg-gray-300 dark:text-black"
-  >
+  <nav class="bg-black font-medium z-20 text-gray-300 absolute t-0 w-full dark:bg-gray-300 dark:text-black">
     <div class="px-6 py-3 mx-auto flex justify-between items-center">
       <div class="flex items-center justify-between">
         <div>
           <router-link
-            class="text-xl font-bold md:text-2xl hover:text-gray-700 dark:hover:text-gray-800"
+            class="
+              text-xl
+              font-bold
+              md:text-2xl
+              hover:text-gray-700
+              dark:hover:text-gray-800
+            "
             to="/"
           >
             <div class="text-gray-300 dark:text-black md:mx-4 h-5 w-5">
@@ -32,13 +36,19 @@
 
       <!-- Mobile Menu open: "block", Menu closed: "hidden" -->
       <div class="items-center flex justify-between">
-        <div class="flex item-center">
-          <router-link
-            v-for="(navLink, id) in navLinks"
-            :key="id"
-            class="invisible sm:mx-4 sm:visible"
-            :to="navLink.to"
-          >{{navLink.name}}</router-link>
+        <div class="flex item-center relative">
+          <ul class="relative ">
+            <li>
+              <router-link
+                v-for="(navLink, id) in navLinks"
+                :key="id"
+                class="invisible sm:mx-4 sm:visible"
+                :to="navLink.to"
+              >
+                {{ navLink.name }}
+              </router-link>
+            </li>
+          </ul>
           <button
             @click="switchTheme"
             class="text-gray-300 cursor-pointer pt-1 dark:text-black md:mx-4 h-5 w-5"
@@ -70,19 +80,18 @@ import { mapActions, mapGetters } from "vuex";
 
 export default {
   name: "navbar",
-  data: () => ({
-  }),
+  data: () => ({}),
   computed: {
-    ...mapGetters({ navLinks: "links"})
+    ...mapGetters({ navLinks: "links" }),
   },
   methods: {
-    ...mapActions({ switchTheme: "TOGGLE_THEME" })
-  }
+    ...mapActions({ switchTheme: "TOGGLE_THEME" }),
+  },
 };
 </script>
 
 <style lang="scss">
 a.exac-active {
-  border-bottom: 2px solid white;
+  border-bottom: 2px solid rgb(241, 83, 10);
 }
 </style>
